@@ -1,6 +1,6 @@
 # flutter_sql_lite_crud
 
-"A new Flutter project."
+"A simple Flutter project using SQLite in a movie database"
 
 ## Getting Started
 
