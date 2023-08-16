@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sql_lite_crud/views/Create_screen.dart';
 import 'package:flutter_sql_lite_crud/views/delete_screen.dart';
 import 'package:flutter_sql_lite_crud/views/read_screen.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-void main() {
+Future main() async {
+// Initialize FFI
+  sqfliteFfiInit();
+
+  databaseFactory = databaseFactoryFfi;
   runApp(const MyApp());
 }
 
