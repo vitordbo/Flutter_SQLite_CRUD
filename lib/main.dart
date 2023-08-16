@@ -2,29 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sql_lite_crud/views/Create_screen.dart';
 import 'package:flutter_sql_lite_crud/views/delete_screen.dart';
 import 'package:flutter_sql_lite_crud/views/read_screen.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter is initialized
-  sqfliteFfiInit(); // Initialize FFI
-
-  runApp(
-    FutureBuilder<void>(
-      future: _initializeApp(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          return const MyApp();
-        } else {
-          return const CircularProgressIndicator();
-        }
-      },
-    ),
-  );
-}
-
-Future<void> _initializeApp() async {
-  databaseFactory = databaseFactoryFfi;
-  // Additional initialization steps if needed
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
